@@ -111,6 +111,28 @@ export class Tab4Page implements OnInit {
     { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
     { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
     { nombre: 'Pedro', apellido: 'ruiz', pais: "españa", edad: 40 },
+    { nombre: 'Pedro', apellido: 'ruiz', pais: "españa", edad: 40 },{ nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'Juan', apellido: 'garcia', pais: "españa", edad: 30 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'María', apellido: 'perez', pais: "portugal", edad: 25 },
+    { nombre: 'Pedro', apellido: 'ruiz', pais: "españa", edad: 40 },
     { nombre: 'Pedro', apellido: 'ruiz', pais: "españa", edad: 40 }
   ];
 
@@ -135,6 +157,26 @@ export class Tab4Page implements OnInit {
     "Esta será la línea 18 de la lista, este entra bien",
     "Esta será la línea 19 de la lista, este entra bien",
     "Esta será la línea 20 de la lista, este entra bien",
+    "Esta será la línea 1 de la lista, vamos a poner un texto muy largo para ver qué es lo que hace en estos casos y como podemos corregirlo",
+    "Esta será la línea 2 de la lista, será más corta que la anterior, pero entrará bastante justo en el ancho A4.",
+    "Esta será la línea 3 de la lista, este entra bien",
+    "Esta será la línea 4 de la lista, este entra bien",
+    "Esta será la línea 5 de la lista, este entra bien",
+    "Esta será la línea 6 de la lista, este entra bien",
+    "Esta será la línea 7 de la lista, este entra bien",
+    "Esta será la línea 8 de la lista, este entra bien",
+    "Esta será la línea 9 de la lista, este entra bien",
+    "Esta será la línea 10 de la lista, este entra bien",
+    "Esta será la línea 11 de la lista, este entra bien",
+    "Esta será la línea 12 de la lista, este entra bien",
+    "Esta será la línea 13 de la lista, este entra bien",
+    "Esta será la línea 14 de la lista, este entra bien",
+    "Esta será la línea 15 de la lista, este entra bien",
+    "Esta será la línea 16 de la lista, este entra bien",
+    "Esta será la línea 17 de la lista, este entra bien",
+    "Esta será la línea 18 de la lista, este entra bien",
+    "Esta será la línea 19 de la lista, este entra bien",
+    "Esta será la línea 20 de la lista, este entra bien"
   ]
 
 
@@ -264,7 +306,12 @@ export class Tab4Page implements OnInit {
     const numeroPagina = doc.getNumberOfPages();
     const textoFooter = `Página ${numeroPagina}`;
     const footerX = doc.internal.pageSize.width/2;
-    const footerY = doc.internal.pageSize.height - 20;
+    const footerY = doc.internal.pageSize.height - 15;
+     // Dibujamos el rectángulo gris debajo de la cabecera
+     const alturaZonaGris = 10; // Altura de la zona gris
+     doc.setFillColor('#CCCCCC');
+     doc.rect(5, doc.internal.pageSize.height - 23, doc.internal.pageSize.width-10, alturaZonaGris, 'F');
+
     doc.text(textoFooter, footerX, footerY, { baseline: 'bottom' });
   }
 }
