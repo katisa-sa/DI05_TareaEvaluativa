@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Mis Noticias
+    </ion-title>
+  </ion-toolbar>
+  <!-- 
+    Creamos y configuramos el coponente ion-segment
+    Trabajará con los valores del array categorías
+    Cuando cambie de valor se llamará al método cambiarCategoria y se le pasará el evento
+   -->
+   <ion-segment scrollable [value]="categorias[0]" (ionChange)="cambiarCategoria($event)">
+    <ion-segment-button [value]="categoria" *ngFor="let categoria of categorias">
+      <ion-label>{{categoria}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngFor="let noticia of listaNoticias">
+    <ion-item>
+      <ion-checkbox color="primary" slot="start" [checked]="seleccionado(noticia)" (ionChange)="checkNoticia($event, noticia)"></ion-checkbox>
+      <ion-label color="primary" class="ion-text-wrap">
+        <h3>{{ noticia.source.name}} </h3>
+        <p> {{ noticia.title}} </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+​
